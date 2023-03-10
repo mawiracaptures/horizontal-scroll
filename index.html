@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+ <head>
+        <meta name="viewport" content="width-device-width,initial-scale=1.0">
+        <title>Horizontal Scroll Image Gallery</title>
+        <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+    <div class="Gallery-wrap">
+        <img src="img/back.png" id="backbtn">
+    
+    <div class="Gallery">
+       <div>
+       <span><img src="img/IMG20221108105838.jpg" ></span>
+       <span><img src="img/IMG20221204160733_1.jpg" ></span>
+       <span><img src="img/IMG20221204164944.jpg" ></span>
+       </div>
+       <div>
+           <span><img src="img/IMG20230306160504_1.jpg" ></span>
+           <span><img src="img/IMG20230213123951.jpg" ></span>
+           <span><img src="img/IMG20230301095026.jpg" ></span>
+        </div>
+    </div>
+        <img src="img/next.png" id="nextbtn">
+      </div>
+
+      <script>
+            let scrollContainer = document.querySelector(".Gallery");
+            let backbtn = document.getElementById("backbtn");
+            let nextbtn = document.getElementById("nextbtn");
+
+            scrollContainer.addEventListener("wheel",(evt) => {
+              evt.preventDefault();
+              scrollContainer.scrollLeft += evt.deltaY;
+              scrollContainer.style.scrollBehavior = "auto" 
+
+            });
+
+            nextbtn.addEventListener("click",()=>{
+              scrollContainer.style.scrollBehaviour = "smooth"
+              scrollContainer.scrollLeft +=900;
+
+            });
+
+            backbtn.addEventListener("click",()=>{
+              scrollContainer.style.scrollBehavior = "smooth"
+              scrollContainer.scrollLeft -=900;
+         
+              
+            });
+
+      </script>
+
+
+            
+
+    
+    
+ </body>
+</html>
